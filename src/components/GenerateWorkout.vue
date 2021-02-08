@@ -20,7 +20,7 @@ export default {
   methods: {
     generate_workout: function() {
       this.button_caption = "Change Workout";
-      axios.get("http://localhost:8000/workout").then(response => (this.image_url = response.data.image_url, this.timer_url = response.data.timer_url, this.duration_minutes = response.data.duration_minutes))
+      axios.get("https://workoutnowdev.herokuapp.com/workout").then(response => (this.image_url = response.data.image_url, this.timer_url = response.data.timer_url, this.duration_minutes = response.data.duration_minutes))
       }
     }
 };
