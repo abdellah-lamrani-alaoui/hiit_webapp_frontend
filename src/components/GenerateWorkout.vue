@@ -34,12 +34,12 @@ export default {
 <style>
 button {
   padding: 10px 20px;
-  border: 1px solid #ddd;
+  border: 2px solid #ddd;
   border-radius: 4px;
   font-size: 14px;
   font-family: '微软雅黑',arail;
   cursor: pointer;
-  background-color: #6495ED;
+  background-color: #4c76c4;
   color: #fff;
 }
 .btn2 {
