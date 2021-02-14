@@ -1,5 +1,5 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo_workoutnow.png" width="350" height="250">
+  <img alt="Vue logo" src="./assets/smaller_logo_vectorized.png">
   <GenerateWorkout></GenerateWorkout>
   <br>
   <br>
