@@ -1,7 +1,7 @@
 <template>
     <div id="app">
       <div>
-      <p v-if="!image_url"> With WorkoutNow, you can generate a new workout designed by the best HIIT Coaches <a href="https://www.lasource-paris.com/" target="_blank">@LaSource :</a></p>
+      <p v-if="!image_url"> With WorkoutNow, you can generate a new workout designed by the best HIIT Coaches <a href="https://www.lasource-paris.com/" target="_blank">@LaSource</a></p>
       <br>
       </div>
       <button @click="generate_workout">{{ button_caption }}</button>
