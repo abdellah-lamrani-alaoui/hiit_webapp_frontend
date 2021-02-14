@@ -1,12 +1,17 @@
 <template>
     <div id="app">
-      <p v-if="duration_minutes"><b>This is a {{ duration_minutes }} minutes workout !</b> &#128170; &#128170; &#128170;</p>
       <div>
+      <p v-if="!image_url"> With WorkoutNow, you can generate a new workout designed by the best HIIT Coaches <a href="https://www.lasource-paris.com/" target="_blank">@LaSource :</a></p>
+      <br>
+      </div>
+      <button @click="generate_workout">{{ button_caption }}</button>
+      <div>
+      <br>
+      <img v-if="image_url" :src="image_url" height="400"><br>
+      <p v-if="duration_minutes"><b>This is a {{ duration_minutes }} minutes workout !</b> &#128170; &#128170; &#128170;</p>
         <a v-if="timer_url" :href="timer_url" target="_blank"><button class="btn2">Get the Timer </button></a>
       </div>
-      <br>
-      <img v-if="image_url" :src="image_url"><br>
-      <button @click="generate_workout">{{ button_caption }}</button>
+      <br >
     </div>
 </template>
 
