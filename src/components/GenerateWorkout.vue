@@ -1,13 +1,19 @@
 <template>
     <div id="app">
       <div>
-      <p v-if="!image_url"> With WorkoutNow, you can generate a new workout designed by the best HIIT Coaches <a href="https://www.lasource-paris.com/" target="_blank">@LaSource</a></p>
+      <p v-if="!image_url"> With WorkoutNow, you can generate a new workout designed by the best HIIT Coaches</p>
       <br>
       </div>
       <button @click="generate_workout">{{ button_caption }}</button>
       <div>
       <br>
-      <img v-if="image_url" :src="image_url" height="400"><br>
+      <div v-if="workout_type === 'image'">
+          <img v-if="url" :src="url" height="400">
+      </div>
+      <div v-else>
+        <iframe v-if="url" :src="url" width="420" height="315"></iframe>
+      </div>
+      <br>
       <p v-if="duration_minutes"><b>This is a {{ duration_minutes }} minutes workout !</b> &#128170; &#128170; &#128170;</p>
         <a v-if="timer_url" :href="timer_url" target="_blank"><button class="btn2">Get the Timer </button></a>
       </div>
@@ -20,12 +26,14 @@ import axios from 'axios'
 export default {
   name: "GenerateWorkout",
   data () {
-  return {image_url : "", timer_url : "", duration_minutes : "", button_caption : "Generate Workout"}
+  return {url : "", timer_url : "", duration_minutes : "", button_caption : "Generate Workout", workout_type: ""}
   },
   methods: {
     generate_workout: function() {
       this.button_caption = "Change Workout";
-      axios.get("https://workoutnowdev.herokuapp.com/workout").then(response => (this.image_url = response.data.image_url, this.timer_url = response.data.timer_url, this.duration_minutes = response.data.duration_minutes))
+      axios.get("https://workoutnowdev.herokuapp.com/workout").then(response => (this.url = response.data.url,
+      this.timer_url = response.data.timer_url, this.duration_minutes = response.data.duration_minutes,
+      this.workout_type = response.data.workout_type))
       }
     }
 };
