@@ -11,7 +11,7 @@
           <img v-if="url" :src="url" height="400">
       </div>
       <div v-else>
-        <iframe v-if="url" :src="url" width="420" height="315"></iframe>
+        <iframe v-if="url" :src="url" width="420" height="315" allowFullScreen></iframe>
       </div>
       <br>
       <p v-if="duration_minutes"><b>This is a {{ duration_minutes }} minutes workout !</b> &#128170; &#128170; &#128170;</p>
