@@ -3,7 +3,21 @@
       <div>
       <p v-if="!image_url"> With WorkoutNow, you can generate a new workout designed by the best HIIT Coaches</p>
       <br>
+      <!-- TODO : make more dynamic -->
+      <b>Workout duration  </b>
+      <select v-model="selected">
+        <option disabled value="">Choose a duration</option>
+        <option>10 min</option>
+        <option>15 min</option>
+        <option>20 min</option>
+        <option>25 min</option>
+        <option>30 min</option>
+        <option>40 min</option>
+        <option>50 min</option>
+        <option>60 min</option>
+      </select>
       </div>
+      <br>
       <button @click="generate_workout">{{ button_caption }}</button>
       <div>
       <br>
@@ -13,9 +27,6 @@
       <div v-else>
         <iframe v-if="url" :src="url" width="420" height="315" allowFullScreen></iframe>
       </div>
-      <br>
-      <p v-if="duration_minutes"><b>This is a {{ duration_minutes }} minutes workout !</b> &#128170; &#128170; &#128170;</p>
-        <a v-if="timer_url" :href="timer_url" target="_blank"><button class="btn2">Get the Timer </button></a>
       </div>
       <br >
     </div>
@@ -31,7 +42,7 @@ export default {
   methods: {
     generate_workout: function() {
       this.button_caption = "Change Workout";
-      axios.get("https://workoutnowdev.herokuapp.com/workout").then(response => (this.url = response.data.url,
+      axios.get("https://workoutnowdev.herokuapp.com/workout", { params: { duration_filter: this.selected }}).then(response => (this.url = response.data.url,
       this.timer_url = response.data.timer_url, this.duration_minutes = response.data.duration_minutes,
       this.workout_type = response.data.workout_type))
       }
