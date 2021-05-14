@@ -6,7 +6,7 @@
       <!-- TODO : make more dynamic -->
       <b>Workout duration  </b>
       <select v-model="selected">
-        <option disabled value="">Choose a duration</option>
+        <option value="">All workouts - #nofilter</option>
         <option>5 min</option>
         <option>10 min</option>
         <option>15 min</option>
