@@ -7,11 +7,13 @@
       <b>Workout duration  </b>
       <select v-model="selected">
         <option disabled value="">Choose a duration</option>
+        <option>5 min</option>
         <option>10 min</option>
         <option>15 min</option>
         <option>20 min</option>
-        <option>25 min</option>
         <option>30 min</option>
+        <option>45 min</option>
+        <option>60 min</option>
       </select>
       </div>
       <br>
