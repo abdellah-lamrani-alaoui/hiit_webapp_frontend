@@ -12,9 +12,6 @@
         <option>20 min</option>
         <option>25 min</option>
         <option>30 min</option>
-        <option>40 min</option>
-        <option>50 min</option>
-        <option>60 min</option>
       </select>
       </div>
       <br>
