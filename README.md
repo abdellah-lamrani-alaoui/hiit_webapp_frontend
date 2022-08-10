@@ -1,4 +1,7 @@
-# hiit_website
+# Hiit Webapp Front End
+
+Frontend for the HIIT web app that randomy propose to you a workout to do.
+
 
 ## Project setup
 ```
